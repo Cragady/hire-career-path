@@ -1,6 +1,6 @@
 # Custom
 node_modules/
-env/
+*.env
 
 
 # Boiler Ignore

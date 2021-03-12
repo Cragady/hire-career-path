@@ -1,3 +1,37 @@
+# Workflows and Setup
+
+## Initial
+
+It looks like for Ubuntu, additional apt packages are required for mysqlclient package:
+
+
+* `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential`
+
+[Link to Pypi](https://pypi.org/project/mysqlclient/)
+
+Create Venv and activate it:
+
+* `python -m venv env`
+* `source env/bin/activate`
+
+Update package manager and setup tools:
+
+* `python -m pip install --upgrade pip`
+* `python -m pip install --upgrate setuptools`
+
+Install dependencies:
+
+* `python -m pip install -r requirements.txt`
+
+After installing new dependencies:
+
+* `python -m pip freeze > requirements.txt`
+
+## Create Database
+
+* `python manage.py create-db`
+
+
 # Layout For Tracker
 
 * Interviews

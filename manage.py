@@ -1,22 +1,26 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_script import Manager
+import os
+from flask_script import Manager, Command
 from flask_migrate import Migrate, MigrateCommand
+
+from app import app, db
 
 # Commands Available:
 #  python manage.py <command>
 #  <command>
-#    db init, db migrate, db upgrade, db --help
+#    db init, db migrate, db upgrade, db createDB, db --help
 
-app = Flask(__name__)
+app.config.from_object(os.environ['APP_SETTINGS'])
 
-# App Config Import
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-
-db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+class createDB(Command):
+    "Creates a named database from the configuration."
+    def run(self):
+        engine = db.create_engine(app.config['DATABASE_SERVER'], {})
+        engine.execute("CREATE DATABASE IF NOT EXISTS " + app.config['DB_NAME'])
+        print("Database successfully created.")
 
 manager = Manager(app)
+manager.add_command('create-db', createDB())
 manager.add_command('db', MigrateCommand)
 
 # Class Imports
