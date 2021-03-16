@@ -37,7 +37,7 @@ It looks like for Ubuntu, additional apt packages are required for mysqlclient p
 
 [Link to Pypi](https://pypi.org/project/mysqlclient/)
 
-Create Venv and activate it:
+Create Venv and activate it in root of project folder:
 
 * `python -m venv env`
 * `source env/bin/activate`
@@ -55,7 +55,35 @@ After installing new dependencies:
 
 * `python -m pip freeze > requirements.txt`
 
-## Create Database and Migrate
+### Configure 
+
+Configure a `.env` file and load it into your work terminal. 
+
+* `. .env`
+
+or 
+
+* `. .name_of_file.env`
+
+Example `.env` file:
+
+```r (bash)
+# .dev.env
+export DB_USER="user_name"
+export DB_USER_PASSWORD="user_password"
+export DB_HOST="localhost"
+export DB_PREFIX="mysql://"
+export DB_NAME="db_name"
+
+
+export DATABASE_SERVER="${DB_PREFIX}${DB_USER}:${DB_USER_PASSWORD}@${DB_HOST}"
+export DATABASE_URL="${DATABASE_SERVER}/${DB_NAME}"
+export APP_SETTINGS="config.DevelopmentConfig"
+```
+
+This goes without saying, but replace the fields according to your desired database setup. You can simplify this to only include the `DATABASE_SERVER`, `DATABASE_URL`, and `APP_SETTINGS` varaibles. This list may be expanded later depending on what is necessary.
+
+### Create Database and Migrate
 
 * `python manage.py create-db`
 * `python manage.py db migrate`
