@@ -1,3 +1,31 @@
+# Hire Career Path
+
+Named this way because puns.
+
+# Overview
+
+This application is a job tracking service that will track job applications and job leads. The application's basic stack is listed below:
+
+* Linux
+* Python
+  * Flask
+* MySQL
+* Vue
+
+For a more expansive list of technologies used, any associated `requirement.txt` and `package.json` files will have a list of the main dependencies used. There's a top level `package.json` file simply because I didn't want to install Vue globally. The reason for this is I use `nvm`, Node Version Manager, to swap between versions of node quite frequently. I suppose it's not strictly necessary to do what I did, but I felt like doing it.
+
+There is no front-end setup at the moment. Right now the app is very basic.
+
+# Planned expansions
+
+* User login and authentication
+* Dockerization
+* Interaction with an email service to send reminder emails
+
+# Reason for Creation
+
+Was inspired by a spreadsheet I used to use. It was fairly cumbersome, so if I want to track my applications and their status I'd rather use this in the future. Also, a good way to learn new technologies.
+
 # Workflows and Setup
 
 ## Initial
