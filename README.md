@@ -59,11 +59,11 @@ Implement a view where all Interviews, Resume Submissions, and Networking is vis
 
 If there are multiple companies with the same name, but for some reason are stored differently, have a popup before the query is executed clarifying which one they want to search. Then use above strategies to combine information and simplify entries. Execute the search query on the relational id table generated.
 
-## Resume Submissions Types
+## Resume Submissions Types - "resume_submissions"
 
 ### Sub-Headers in Regular View
 
-* resume_submisssion_id - INT NOT NULL PRIMARY KEY 
+* resume_submisssion_id - INT NOT NULL AUTO_INCREMENT PRIMARY KEY 
 * job_applied_to - TINYTEXT
 * company_name - TINYTEXT
 
@@ -82,4 +82,44 @@ If there are multiple companies with the same name, but for some reason are stor
 * status_of_application - TEXT
 * comments - TEXT
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+## Interviews Types - "interviews"
+
+* interview_id - INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+* interview_date - DATETIME
+* interviewer_name_and_title - TINYTEXT
+* phone - TINYTEXT
+* email_and_other_contact - TINYTEXT
+* interview_address - TINYTEXT
+* mailing_address - TINYTEXT
+* follow_up_date - DATETIME // date_thank_you_sent
+* comments - TEXT
+
+## Networking Types - "networking"
+
+### Sub-Headers in Regular View
+
+* networking_id - INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+* aquaintance_name_and_title - TINYTEXT
+* company_name - TINYTEXT
+
+### Sub-Sub Headers in Regular View
+
+* contact_information - TINYTEXT
+* comments - TEXT
+
+### Leads (Listed under contact so you know who gave you the lead)
+
+* lead - TINYTEXT (Lead-(n))
+* lead_name_and_title - TINYTEXT
+* company - TINYTEXT
+* contact_information - TINYTEXT
+* comments - TEXT
+
+## Career Websites Types - "career_websites"
+
+* career_websites_id - INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+* website - TINYTEXT
+* user_name - TINYTEXT
+* date_resume_posted - DATETIME
+* date_cover_leter_posted - DATETIME
+* comments - TEXT

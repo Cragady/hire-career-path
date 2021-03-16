@@ -6,6 +6,8 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     DATABASE_SERVER = os.environ['DATABASE_SERVER']
     DB_NAME = os.environ['DB_NAME']
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = os.getenv('SECRET_KEY', 'a_hidden_and_valuable_item')
 
 class ProductionConfig(Config):
     DEBUG = False
@@ -20,3 +22,5 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
+
+key = Config.SECRET_KEY
