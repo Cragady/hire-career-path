@@ -12,7 +12,7 @@ This application is a job tracking service that will track job applications and 
 * MySQL
 * Vue
 
-For a more expansive list of technologies used, any associated `requirement.txt` and `package.json` files will have a list of the main dependencies used. There's a top level `package.json` file simply because I didn't want to install Vue globally. The reason for this is I use `nvm`, Node Version Manager, to swap between versions of node quite frequently. I suppose it's not strictly necessary to do what I did, but I felt like doing it.
+For a more expansive list of technologies used, any associated `requirements.txt` and `package.json` files will have a list of the main dependencies used. There's a top level `package.json` file simply because I didn't want to install Vue globally. The reason for this is I use `nvm`, Node Version Manager, to swap between versions of node quite frequently. I suppose it's not strictly necessary to do what I did, but I felt like doing it.
 
 There is no front-end setup at the moment. Right now the app is very basic.
 
@@ -55,9 +55,11 @@ After installing new dependencies:
 
 * `python -m pip freeze > requirements.txt`
 
-## Create Database
+## Create Database and Migrate
 
 * `python manage.py create-db`
+* `python manage.py db migrate`
+* `python manage.py db upgrade`
 
 
 # Layout For Tracker
