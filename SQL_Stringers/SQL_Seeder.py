@@ -1,3 +1,6 @@
+# This file is no longer needed and is outdated. Just run db migrations using manage.py to seed the db with the tables.
+# May keep file around for reference or other utility
+
 def prepender(str):
     returnString = "USE " + str + ";"
     return returnString
