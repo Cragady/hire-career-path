@@ -55,7 +55,7 @@ After installing new dependencies:
 
 * `python -m pip freeze > requirements.txt`
 
-### Configure 
+### Configure Environment Variables
 
 Configure a `.env` file and load it into your work terminal. 
 
@@ -88,6 +88,12 @@ This goes without saying, but replace the fields according to your desired datab
 * `python manage.py create-db`
 * `python manage.py db migrate`
 * `python manage.py db upgrade`
+
+### Deployment
+
+Will configure this later.
+
+[This is a list of deployment options for Flask](https://flask.palletsprojects.com/en/master/deploying/)
 
 
 # Layout For Tracker

@@ -32,7 +32,7 @@ class Resume(Resource):
     def get(self, id):
         resume = get_a_resume(id)
         if not resume:
-            api.abort(404)
+            api.abort(404, 'Resume not found.')
         else:
             return resume
 
@@ -40,6 +40,10 @@ class Resume(Resource):
     def delete(self, id):
         resume = get_a_resume(id)
         if not resume:
-            api.abort(404)
+            api.abort(404, 'Resume not found.')
         else:
             delete_a_resume(resume)
+            return ({
+                'status': 'success',
+                'message': 'Successfully deleted resume.'
+            }, 200)
