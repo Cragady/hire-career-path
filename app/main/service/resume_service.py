@@ -1,5 +1,4 @@
 import datetime
-from re import M
 
 from app.main import db
 from app.main.model.resume import Resume

@@ -1,5 +1,4 @@
 from .. import db
-from typing import Union
 from sqlalchemy.dialects.mysql import TEXT, TINYTEXT, DATETIME
 
 class Resume(db.Model):

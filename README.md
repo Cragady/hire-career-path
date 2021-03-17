@@ -117,6 +117,8 @@ Will configure this later.
 
 # Database and Information Flow/Design
 
+In the future, there *may* be a ***massive*** database redesign. Right now I just want to get a basic application up and running. Eventually I want to get the Interviews, Resume Submissions, and Networking all linked together fo a company.
+
 From Resume Submission, if in singular view, have it possible to generate an Interview Entry.
 
 Implement a view where all Interviews, Resume Submissions, and Networking is visible for a singular Company. Search DB for any possible entries that haven't been linked. If there exists entries, pull this entry as well, but color code it different. On click, there should be a query that asks the user if this is the same company. If so, the user is prompted to link to the Company. Group them according to naming conventions. This may be easiest done with a table that essentially only holds relational id's. If a merge is necessary, then edit the entry of the one the user wants to keep while deleting the old entry.

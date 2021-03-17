@@ -1,5 +1,4 @@
 from .. import db
-from typing import Union
 from sqlalchemy.dialects.mysql import TEXT, TINYTEXT, DATETIME
 
 class Interview(db.Model):
@@ -15,3 +14,5 @@ class Interview(db.Model):
     mailing_address = db.Column(TINYTEXT)
     follow_up = db.Column('follow_up_date', DATETIME)
     comments = db.Column(TEXT)
+    created_at = db.Column(DATETIME)
+    updated_at = db.Column(DATETIME)

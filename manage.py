@@ -43,7 +43,7 @@ class dropDatabase(Command):
 
 @manager.command
 def run():
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
 
 manager.add_command('create-db', createDB())
 manager.add_command('db-seed-init', seedInit())
