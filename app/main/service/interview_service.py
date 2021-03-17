@@ -20,7 +20,7 @@ def save_new_interview(data: Dict[str, str,]) -> Tuple[Dict[str, str], int]:
             comms=data['comms'],
             interview_address=data['interview_address'],
             mailing_address=data['mailing_address'],
-            follow_up=data['follow_up'],
+            follow_up_date=data['follow_up'],
             comments=data['comments']
         )
         save_changes(new_interview)

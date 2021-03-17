@@ -12,7 +12,7 @@ class Interview(db.Model):
     comms = db.Column('email_and_other_contact', TINYTEXT)
     interview_address = db.Column(TINYTEXT)
     mailing_address = db.Column(TINYTEXT)
-    follow_up = db.Column('follow_up_date', DATETIME)
+    follow_up_date = db.Column(DATETIME)
     comments = db.Column(TEXT)
     created_at = db.Column(DATETIME)
     updated_at = db.Column(DATETIME)

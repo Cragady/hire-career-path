@@ -30,6 +30,37 @@ class InterviewDto:
         'comms': fields.String(description='email and other contact'),
         'interview_address': fields.String(description='address of interview'),
         'mailing_address': fields.String(description='mailing address of company'),
-        'follow_up': fields.String(description='date thank you letter or other inquiries sent'),
+        'follow_up_date': fields.String(description='date thank you letter or other inquiries sent'),
         'comments': fields.String(description='comments and notes on interview and other info')
+    })
+
+class NetworkingDto:
+    api = Namespace('networking', description='networking related operations')
+    networking = api.model('networking', {
+        'id': fields.String(description='networking id'),
+        'acquaintance': fields.String(description='acquaintance name and title'),
+        'company': fields.String(description='company name'),
+        'comms': fields.String(description='contact information'),
+        'comments': fields.String(description='comments on acquaintance')
+    })
+
+class LeadDto:
+    api = Namespace('lead', description='lead related operations')
+    lead = api.model('lead', {
+        'id': fields.String(description='lead id'),
+        'name': fields.String(description='lead name and title'),
+        'company': fields.String(description='company lead works for'),
+        'comms': fields.String(description='contact information'),
+        'comments': fields.String(description='comments and notes on lead')
+    })
+
+class WebsiteDto:
+    api = Namespace('website', description='website related operations')
+    website = api.model('website', {
+        'id': fields.String(description='website id'),
+        'website': fields.String(description='website'),
+        'username': fields.String(description='username used on website'),
+        'resume_date': fields.String(description='date resume posted'),
+        'cover_letter_date': fields.String(description='date cover letter posted'),
+        'comments': fields.String(description='comments and notes on website')
     })
