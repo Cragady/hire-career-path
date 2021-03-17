@@ -117,7 +117,7 @@ Will configure this later.
 
 # Database and Information Flow/Design
 
-In the future, there *may* be a ***massive*** database redesign. Right now I just want to get a basic application up and running. Eventually I want to get the Interviews, Resume Submissions, and Networking all linked together fo a company.
+In the future, there *may* be a ***massive*** database redesign. Right now I just want to get a basic application up and running. Eventually I want to get the Interviews, Resume Submissions, and Networking all linked together to a company.
 
 From Resume Submission, if in singular view, have it possible to generate an Interview Entry.
 
