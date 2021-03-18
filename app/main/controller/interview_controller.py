@@ -2,7 +2,7 @@ from flask import request
 from flask_restx import Resource
 
 from ..util.dto import InterviewDto
-from app.main.service.interview_service import save_new_interview, get_all_interviews, get_an_interview, delete_an_interview
+from app.main.service.interview_service import save_new_interview, get_all_interviews, get_an_interview, delete_an_interview, save_update
 from typing import Dict, Tuple
 
 api = InterviewDto.api
@@ -47,6 +47,13 @@ class Interview(Resource):
                 'status': 'success',
                 'message': 'Successfully deleted interview.'
             })
+
+    @api.expect(_interview, validate=True)
+    @api.response(201, 'Interview successfully updated.')
+    @api.doc('update an interview')
+    def post(self, id) -> Tuple[Dict[str, str], int]:
+        data = request.json
+        return save_update(id, data=data)
 
 
 

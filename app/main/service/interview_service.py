@@ -20,7 +20,7 @@ def save_new_interview(data: Dict[str, str,]) -> Tuple[Dict[str, str], int]:
             comms=data['comms'],
             interview_address=data['interview_address'],
             mailing_address=data['mailing_address'],
-            follow_up_date=data['follow_up'],
+            follow_up_date=data['follow_up_date'],
             comments=data['comments']
         )
         save_changes(new_interview)
@@ -29,6 +29,27 @@ def save_new_interview(data: Dict[str, str,]) -> Tuple[Dict[str, str], int]:
             'message': 'Interview successfully saved.'
         }
         response_code = 201
+
+    return response_object, response_code
+
+
+def save_update(id, data: Dict[str, str]) -> None:
+    interview = db.session.query(Interview).filter(Interview.id == id)
+    response_object = {
+        'status': 'fail',
+        'message': 'Interview doesn\'t exist.'
+    }
+    response_code = 404
+    if interview:
+        response_object = {
+            'status': 'success',
+            'message': 'Interview successfully updated.'
+        }
+        response_code = 201
+        interview.update(data)
+        # new_interview = db.session.query(Interview).filter(Interview.id == id)
+        # new_interview.update(data)
+        db.session.commit()
 
     return response_object, response_code
 
