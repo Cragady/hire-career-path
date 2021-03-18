@@ -46,7 +46,7 @@ def delete_an_interview(self, id):
     )
 
 class TestInterviewBlueprint(BaseTestCase):
-    def test_submission(self):
+    def test_submit_interview(self):
         """ Tests new interview submission """
         with self.client:
             response = add_an_interview(self)
@@ -56,7 +56,7 @@ class TestInterviewBlueprint(BaseTestCase):
             self.assertTrue(response.content_type == 'application/json')
             self.assertEqual(response.status_code, 201)
 
-    def test_find_a_submission(self):
+    def test_find_an_interview(self):
         """ Tests finding a interview submission """
         add_an_interview(self)
         with self.client:
@@ -69,7 +69,7 @@ class TestInterviewBlueprint(BaseTestCase):
             
             self.assertEqual(data, comparrison_interview)
 
-    def test_deleting_a_submission(self):
+    def test_deleting_an_interview(self):
         """ Tests deleting a interview submission """
         add_an_interview(self)
         with self.client:
@@ -79,7 +79,7 @@ class TestInterviewBlueprint(BaseTestCase):
             self.assertTrue(response.content_type == 'application/json')
             self.assertTrue(response.status_code, 201)
 
-    def test_updating_a_submission(self):
+    def test_updating_an_interview(self):
         """ Tests updating a interview submission """
         add_an_interview(self)
         with self.client:
@@ -91,7 +91,7 @@ class TestInterviewBlueprint(BaseTestCase):
             data = json.loads(response.data.decode())
             self.assertEqual(comparrison_interview, data)
 
-    def test_failed_update_of_submission(self):
+    def test_failed_update_of_interview(self):
         """ Tests failed update of submission """
         with self.client:
             update_an_interview(self, '1', test_interview)
