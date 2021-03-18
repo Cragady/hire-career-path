@@ -130,9 +130,11 @@ If there are multiple companies with the same name, but for some reason are stor
 
 
 
-# Potential Problems
+# Potential Problems and Possible Improvements
 
 * Using the name `Network` and `network`. Keep an eye out for any unexpected behavior from using these names. I plan on having a better naming convention for this in the future.
+
+* Right now I'm updating all columns when updating an entry on a table. This may cause unnecessary overhead. Will fix later.
 
 # Bugs/Problems/Other
 
