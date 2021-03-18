@@ -127,3 +127,14 @@ If there are multiple companies with the same name, but for some reason are stor
 
 * Career Websites
   * Website | User Name | Password (Not Recommended) | Date Resume Posted | Date Cover Letter Posted | Comments
+
+
+# Bugs/Problems/Other
+
+This is where I'll be tracking problems. I'll remove items that I feel are sufficiently addressed. If an issue is noteworthy or may cause problems later will be listed [here.](#Fixed,%20but%20Noteworthy)
+
+* There is one test case that will pass even if there is no endpoints set up for the dataset. Need to rewrite all test cases with the string `test_failed_update_of_` in its name.
+
+# Fixed, but Noteworthy
+
+Issues that have been fixed, but are noteworthy will go here. Issues that may appear to be fixed but can cause problems later will also go here.
