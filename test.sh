@@ -5,6 +5,6 @@
 echo "Loading the test environment"
 source .test.env 
 source env/bin/activate
-echo "Executing tests.
+echo "Executing tests."
 exec python manage.py test
 exit 0
