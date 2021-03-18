@@ -2,7 +2,7 @@ from flask import request
 from flask_restx import Resource
 
 from ..util.dto import ResumeDto
-from app.main.service.resume_service import save_new_resume, get_all_resumes, get_a_resume, delete_a_resume
+from app.main.service.resume_service import save_new_resume, get_all_resumes, get_a_resume, delete_a_resume, save_update
 from typing import Dict, Tuple
 
 api = ResumeDto.api
@@ -47,3 +47,10 @@ class Resume(Resource):
                 'status': 'success',
                 'message': 'Successfully deleted resume.'
             }, 200)
+
+    @api.expect(_resume, validate=True)
+    @api.response(201, 'Resume successfully updated.')
+    @api.doc('update a resume')
+    def post(self, id) -> Tuple[Dict[str, str], int]:
+        data = request.json
+        return save_update(id, data=data)

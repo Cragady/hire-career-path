@@ -1,8 +1,9 @@
 import os
+import SQL_Stringers.SQL_Seeder as SQLString
+import unittest
+
 from flask_script import Manager, Command
 from flask_migrate import Migrate, MigrateCommand
-import SQL_Stringers.SQL_Seeder as SQLString
-
 from app import blueprint
 from app.main import create_app, db
 
@@ -41,14 +42,23 @@ class dropDatabase(Command):
         engineDB.execute("DROP DATABASE " + DBName)
         print("Database successfully deleted.")
 
-@manager.command
-def run():
-    app.run(host='0.0.0.0', port=5000)
-
 manager.add_command('create-db', createDB())
 # manager.add_command('db-seed-init', seedInit()) # Outdated and unnecessary
 manager.add_command('danger-drop-database', dropDatabase())
 manager.add_command('db', MigrateCommand)
+
+@manager.command
+def run():
+    app.run(host='0.0.0.0', port=5000)
+
+@manager.command
+def test():
+    """ Runs tests """
+    tests = unittest.TestLoader().discover('app/test', pattern='test*.py')
+    result = unittest.TextTestRunner(verbosity=2).run(tests)
+    if result.wasSuccessful():
+        return 0
+    return 1
 
 # Class Imports
 # class User(db.Model):

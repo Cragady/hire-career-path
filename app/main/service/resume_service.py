@@ -3,6 +3,7 @@ import datetime
 from app.main import db
 from app.main.model.resume import Resume
 from typing import Dict, Tuple
+import json
 
 def save_new_resume(data: Dict[str, str]) -> Tuple[Dict[str, str], int]:
     resume = Resume.query.filter_by(id=data['id']).first()
@@ -39,6 +40,25 @@ def save_new_resume(data: Dict[str, str]) -> Tuple[Dict[str, str], int]:
     return response_object, response_code
 
 
+def save_update(id, data: Dict[str, str]) -> None:
+    resume = db.session.query(Resume).filter(Resume.id == id)
+    response_object = {
+        'status': 'fail',
+        'message': 'Resume doesn\'t exist.'
+    }
+    response_code = 404
+    if resume:
+        response_object = {
+            'status': 'success',
+            'message': 'Resume successfully updated.'
+        }
+        response_code = 201
+        resume.update(data)
+        # new_resume = db.session.query(Resume).filter(Resume.id == id)
+        # new_resume.update(data)
+        db.session.commit()
+
+    return response_object, response_code
 
 
 def get_all_resumes():
