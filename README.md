@@ -136,6 +136,8 @@ If there are multiple companies with the same name, but for some reason are stor
 
 * Right now I'm updating all columns when updating an entry on a table. This may cause unnecessary overhead. Will fix later.
 
+* Maybe make a test class that contains boiler data to throw into the database. This will make writing test cases easier when creating a migration that include table links.
+
 # Bugs/Problems/Other
 
 This is where I'll be tracking problems. I'll remove items that I feel are sufficiently addressed. If an issue is noteworthy or may cause problems later will be listed [here.](#Fixed,%20but%20Noteworthy)
