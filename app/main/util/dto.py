@@ -34,9 +34,9 @@ class InterviewDto:
         'comments': fields.String(description='comments and notes on interview and other info')
     })
 
-class NetworkingDto:
-    api = Namespace('networking', description='networking related operations')
-    networking = api.model('networking', {
+class NetworkDto:
+    api = Namespace('network', description='networking related operations')
+    network = api.model('network', {
         'id': fields.String(description='networking id'),
         'acquaintance': fields.String(description='acquaintance name and title'),
         'company': fields.String(description='company name'),

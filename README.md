@@ -129,6 +129,11 @@ If there are multiple companies with the same name, but for some reason are stor
   * Website | User Name | Password (Not Recommended) | Date Resume Posted | Date Cover Letter Posted | Comments
 
 
+
+# Potential Problems
+
+* Using the name `Network` and `network`. Keep an eye out for any unexpected behavior from using these names. I plan on having a better naming convention for this in the future.
+
 # Bugs/Problems/Other
 
 This is where I'll be tracking problems. I'll remove items that I feel are sufficiently addressed. If an issue is noteworthy or may cause problems later will be listed [here.](#Fixed,%20but%20Noteworthy)
