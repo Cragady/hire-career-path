@@ -45,7 +45,7 @@ Create Venv and activate it in root of project folder:
 Update package manager and setup tools:
 
 * `python -m pip install --upgrade pip`
-* `python -m pip install --upgrate setuptools`
+* `python -m pip install --upgrade setuptools`
 
 Install dependencies:
 
