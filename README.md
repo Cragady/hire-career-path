@@ -30,12 +30,14 @@ Was inspired by a spreadsheet I used to use. It was fairly cumbersome, so if I w
 
 ## Initial
 
-It looks like for Ubuntu, additional apt packages are required for mysqlclient package:
+It looks like for Ubuntu, additional apt packages are required for the mysqlclient package:
 
 
 * `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential`
 
 [Link to Pypi](https://pypi.org/project/mysqlclient/)
+
+I'll have to look into a friendlier mysql driver for python that also plays nicely with flask-sqlalchemy and make the switch.
 
 Create Venv and activate it in root of project folder:
 
