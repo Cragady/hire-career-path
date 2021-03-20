@@ -3,7 +3,12 @@
 
 
 echo "Loading the test environment"
-source .test.env 
+if [ "$1" ]
+then
+    source .aws.test.env
+else
+    source .test.env 
+fi
 source env/bin/activate
 echo "Executing tests."
 exec python manage.py test

@@ -2,6 +2,10 @@
 node_modules/
 *.env
 reference/
+.serverless/
+env2/
+zappa_settings.json
+app-hcp-production-template-1616179744.json
 
 
 # Boiler Ignore

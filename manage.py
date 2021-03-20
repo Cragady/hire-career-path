@@ -30,12 +30,6 @@ class createDB(Command):
         engineDB.execute("CREATE DATABASE IF NOT EXISTS " + DBName)
         print("Database successfully created.")
 
-# class seedInit(Command): # Outdated and unnecessary
-#     "Creates empty tables for database." # Outdated and unnecessary
-#     def run(self): # Outdated and unnecessary
-#         engineDB.execute(SQLString.SQL_Init_String(DBName)) # Outdated and unnecessary
-#         print("Database successfully seeded with empty tables.") # Outdated and unnecessary
-
 class dropDatabase(Command):
     "Deletes database (DANGEROUS)"
     def run(self):
@@ -43,7 +37,6 @@ class dropDatabase(Command):
         print("Database successfully deleted.")
 
 manager.add_command('create-db', createDB())
-# manager.add_command('db-seed-init', seedInit()) # Outdated and unnecessary
 manager.add_command('danger-drop-database', dropDatabase())
 manager.add_command('db', MigrateCommand)
 
