@@ -30,18 +30,9 @@ Was inspired by a spreadsheet I used to use. It was fairly cumbersome, so if I w
 
 ## Initial
 
-It looks like for Ubuntu, additional apt packages are required for the mysqlclient package:
-
-
-* `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential`
-
-[Link to Pypi](https://pypi.org/project/mysqlclient/)
-
-I'll have to look into a friendlier mysql driver for python that also plays nicely with flask-sqlalchemy and make the switch.
-
 ~~Create Venv and activate it in root of project folder:~~
 
-Create Venv and activate it in the `server` directory of the project folder:
+Create and activate the Venv in the `server` directory of the project folder:
 
 * `python -m venv env`
 * `source env/bin/activate`
@@ -86,6 +77,8 @@ export DATABASE_SERVER="${DB_PREFIX}${DB_USER}:${DB_USER_PASSWORD}@${DB_HOST}"
 export DATABASE_URL="${DATABASE_SERVER}/${DB_NAME}"
 export APP_SETTINGS="config.DevelopmentConfig"
 ```
+
+Note: If you are deploying with AWS, then you'll have to config the environment variables differently.
 
 This goes without saying, but replace the fields according to your desired database setup. You can simplify this to only include the `DATABASE_SERVER`, `DATABASE_URL`, and `APP_SETTINGS` varaibles. This list may be expanded later depending on what is necessary.
 
