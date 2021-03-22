@@ -84,7 +84,7 @@ This goes without saying, but replace the fields according to your desired datab
 
 ### Create Database and Migrate
 
-* `python manage.py create-db`
+* `python manage.py create_db`
 * `python manage.py db migrate`
 * `python manage.py db upgrade`
 
