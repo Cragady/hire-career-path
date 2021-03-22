@@ -18,7 +18,7 @@ class InterviewList(Resource):
     @api.expect(_interview, validate=True)
     @api.response(201, 'Interview successfully created.')
     @api.doc('create a new interview')
-    def post(self) -> Tuple[Dict[str, str,], int]:
+    def post(self) -> Tuple[Dict[str, str], int]:
         data = request.json
         return save_new_interview(data=data)
 

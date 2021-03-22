@@ -1,5 +1,4 @@
 import os
-import SQL_Stringers.SQL_Seeder as SQLString
 import unittest
 
 from flask_script import Manager, Command
@@ -19,26 +18,24 @@ app.register_blueprint(blueprint)
 app.app_context().push()
 migrate = Migrate(app, db)
 
+lambda_app = app
 
-manager = Manager(app)
 engineDB = db.create_engine(app.config['DATABASE_SERVER'], {})
 DBName = app.config['DB_NAME']
+manager = Manager(app)
 
-class createDB(Command):
-    "Creates a named database from the configuration."
-    def run(self):
-        engineDB.execute("CREATE DATABASE IF NOT EXISTS " + DBName)
-        print("Database successfully created.")
-
-class dropDatabase(Command):
-    "Deletes database (DANGEROUS)"
-    def run(self):
-        engineDB.execute("DROP DATABASE " + DBName)
-        print("Database successfully deleted.")
-
-manager.add_command('create-db', createDB())
-manager.add_command('danger-drop-database', dropDatabase())
 manager.add_command('db', MigrateCommand)
+
+@manager.command
+def create_db():
+    engineDB.execute("CREATE DATABASE IF NOT EXISTS " + DBName)
+    print("Database successfully created.")
+
+@manager.command
+def drop_database():    
+    engineDB.execute("DROP DATABASE " + DBName)
+    print("Database successfully deleted.")
+        
 
 @manager.command
 def run():
@@ -57,6 +54,7 @@ def test():
 # class User(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
 #     name = db.Column(db.String(128))
+
 
 if __name__ == '__main__':
     manager.run()

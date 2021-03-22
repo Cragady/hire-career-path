@@ -5,9 +5,9 @@
 echo "Loading the test environment"
 if [ "$1" ]
 then
-    source .aws.test.env
+    source secret.env/.aws.test.env
 else
-    source .test.env 
+    source secet.env/.test.env 
 fi
 source env/bin/activate
 echo "Executing tests."

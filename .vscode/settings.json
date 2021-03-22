@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "server/env/bin/python",
+    "python.autoComplete.extraPaths": [
+        "./server"
+    ],
+    "python.analysis.extraPaths": [
+        "./server"
+    ]
+}

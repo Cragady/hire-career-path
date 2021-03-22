@@ -6,6 +6,7 @@ reference/
 env2/
 zappa_settings.json
 app-hcp-production-template-1616179744.json
+.alias_rs
 
 
 # Boiler Ignore
