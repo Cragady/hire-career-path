@@ -69,7 +69,7 @@ Example `.env` file:
 export DB_USER="user_name"
 export DB_USER_PASSWORD="user_password"
 export DB_HOST="localhost"
-export DB_PREFIX="mysql://"
+export DB_PREFIX="mysql+mysqlconnector://"
 export DB_NAME="db_name"
 
 
@@ -92,7 +92,7 @@ This goes without saying, but replace the fields according to your desired datab
 
 [This is a list of deployment options for Flask](https://flask.palletsprojects.com/en/master/deploying/)
 
-Who, so this one is a doozy. You'll be able to find the AWS deployment method [in the AWS.md file here.](docs/AWS-deployment.md)
+Whooo, so this one was a doozy to set up for me initially. I don't know why I had to fight like this, for this repository, I've had other test repos pushed much more easily than this one. I have it working at this point though. You'll be able to find the AWS deployment method [in the AWS.md file here.](docs/AWS-deployment.md)
 
 I will add more deployment methods later if I'm feeling inspired.
 
