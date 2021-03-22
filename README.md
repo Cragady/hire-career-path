@@ -39,7 +39,9 @@ It looks like for Ubuntu, additional apt packages are required for the mysqlclie
 
 I'll have to look into a friendlier mysql driver for python that also plays nicely with flask-sqlalchemy and make the switch.
 
-Create Venv and activate it in root of project folder:
+~~Create Venv and activate it in root of project folder:~~
+
+Create Venv and activate it in the `server` directory of the project folder:
 
 * `python -m venv env`
 * `source env/bin/activate`
@@ -58,6 +60,8 @@ After installing new dependencies:
 * `python -m pip freeze > requirements.txt`
 
 ### Configure Environment Variables
+
+Note: I have since moved all of my `.env` files into their own directory. For whatever setup you have, just source it appropriately. Change the `test.sh` script for your appropriate test variables, or follow the same directory setup I do.
 
 Configure a `.env` file and load it into your work terminal. 
 
@@ -91,11 +95,17 @@ This goes without saying, but replace the fields according to your desired datab
 * `python manage.py db migrate`
 * `python manage.py db upgrade`
 
-### Deployment
-
-Will configure this later.
+### Deployment Backend
 
 [This is a list of deployment options for Flask](https://flask.palletsprojects.com/en/master/deploying/)
+
+Who, so this one is a doozy. You'll be able to find the AWS deployment method [in the AWS.md file here.](docs/AWS-deployment.md)
+
+I will add more deployment methods later if I'm feeling inspired.
+
+### Deployment Frontend
+
+I'm keeping the front and back separate from each other.
 
 # Database and Information Flow/Design
 
