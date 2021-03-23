@@ -163,7 +163,7 @@ This is where I'll be tracking problems. I'll remove items that I feel are suffi
 
 * There is one test case that will pass even if there is no endpoints set up for the dataset. Need to rewrite all test cases with the string `test_failed_update_of_` in its name.
 
-* Looks like I screwed up with the update id portion. I need to set id to be non-editable.
+* Need to set id to be non-editable.
 
 * Do not allow an id of `0` to be written to database
 
