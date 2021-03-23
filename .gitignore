@@ -1,7 +1,7 @@
 # Custom
 node_modules/
 *.env
-.a.reference/
+.a.*
 .serverless/
 env2/
 zappa_settings.json

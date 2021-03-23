@@ -106,6 +106,8 @@ I honestly don't like running the database migrations like this, if I find a bet
 
 [This is a list of deployment options for Flask](https://flask.palletsprojects.com/en/master/deploying/)
 
+#### AWS
+
 Whooo, so this one was a doozy to set up for me initially. I don't know why I had to fight like this, for this repository, I've had other test repos pushed much more easily than this one. I have it working at this point though. You'll be able to find the AWS deployment method [in the AWS.md file here.](docs/AWS-deployment.md)
 
 I will add more deployment methods later if I'm feeling inspired.
