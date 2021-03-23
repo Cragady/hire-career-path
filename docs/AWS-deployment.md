@@ -47,7 +47,9 @@ Services > IAM (Under Security, Identity, & Compliance)
 
 Or just search IAM.
 
-## Zappa
+## Backend
+
+### Zappa
 
 Once you have that setup, you'll be able to run the commands necessary for deployment.
 
@@ -90,7 +92,7 @@ If you need the log to be written to a file, you can run a command that's simila
 * `zappa tail > zappa_log`
   * `zappa tail > <file name here, ext is optional>
 
-## Environment Variables
+### Environment Variables
 
 After you deploy for the first time, you will have to edit the environment variables. For this application, at this time of writing, the required environment variables is as follows:
 
@@ -105,7 +107,7 @@ From the landing page for Lambda, click on `Functions` in the side bar. From the
 
 Select `Edit` and keep adding environment variables until the appropriate number variables exist. Then just fill out the key and value pairs. 
 
-### A Couple Things of Note
+#### A Couple Things of Note
 
 The `DATABASE_SERVER` and `DATABASE_URL` need to have the prefix `mysql+mysqlconnector://`. So for example, your connection string should look something like this:
 
@@ -128,6 +130,10 @@ Click save after you've filled out the environment variables.
 I'm pretty sure the function restarts after you change the variables, but I like to update it just to be sure:
 
 * `zappa update dev`
+
+## Frontend
+
+
 
 
 [Back to Readme](../README.md)
