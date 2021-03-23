@@ -88,6 +88,20 @@ This goes without saying, but replace the fields according to your desired datab
 * `python manage.py db migrate`
 * `python manage.py db upgrade`
 
+#### AWS Database
+
+I'm taking the quick and easy route on this. I'll update this portion when I find a better solution, as for now however, I just want to get something up and running.
+
+Create a `.env` file, I'm probably going to name mine `.aws.env`. Put this env file in a directory named `secret.env/` for ease of access, or wherever you want the env file to go.
+
+Source the `.env` file, then run the manage.py commands for migration and updating. 
+
+Don't forget to source your env for your development or testing environments!
+
+I honestly don't like running the database migrations like this, if I find a better way, I will update this section. If it gets a bit too long, I'll move this section to it's own `.md` file under the `docs/` directory.
+
+
+
 ### Deployment Backend
 
 [This is a list of deployment options for Flask](https://flask.palletsprojects.com/en/master/deploying/)
@@ -148,6 +162,10 @@ If there are multiple companies with the same name, but for some reason are stor
 This is where I'll be tracking problems. I'll remove items that I feel are sufficiently addressed. If an issue is noteworthy or may cause problems later will be listed [here.](#Fixed,%20but%20Noteworthy)
 
 * There is one test case that will pass even if there is no endpoints set up for the dataset. Need to rewrite all test cases with the string `test_failed_update_of_` in its name.
+
+* Looks like I screwed up with the update id portion. I need to set id to be non-editable.
+
+* Do not allow an id of `0` to be written to database
 
 # Fixed, but Noteworthy
 
